@@ -39,7 +39,7 @@
             commentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             userBindingSource = new BindingSource(components);
             tableLayoutPanel1 = new TableLayoutPanel();
-            button1 = new Button();
+            btSave = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -123,7 +123,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.Controls.Add(dataGridView1, 0, 0);
-            tableLayoutPanel1.Controls.Add(button1, 1, 1);
+            tableLayoutPanel1.Controls.Add(btSave, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(12, 12);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -133,14 +133,15 @@
             tableLayoutPanel1.Size = new Size(776, 426);
             tableLayoutPanel1.TabIndex = 1;
             // 
-            // button1
+            // btSave
             // 
-            button1.Location = new Point(698, 400);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Сохранить";
-            button1.UseVisualStyleBackColor = true;
+            btSave.Location = new Point(698, 400);
+            btSave.Name = "btSave";
+            btSave.Size = new Size(75, 23);
+            btSave.TabIndex = 1;
+            btSave.Text = "Сохранить";
+            btSave.UseVisualStyleBackColor = true;
+            btSave.Click += btSave_Click;
             // 
             // MainForm
             // 
@@ -161,7 +162,7 @@
 
         private DataGridView dataGridView1;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button button1;
+        private Button btSave;
         private BindingSource userBindingSource;
         private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
