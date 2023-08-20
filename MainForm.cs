@@ -6,6 +6,7 @@ namespace nauka.test.impl
 {
     public partial class MainForm : Form
     {
+        // Контекст базы данных
         private NaukaDbContext? dbContext;
 
         public MainForm()
@@ -17,11 +18,14 @@ namespace nauka.test.impl
         {
             base.OnLoad(e);
 
+            // Создание контекста базы данных
             this.dbContext = new NaukaDbContext();
             this.dbContext.Database.EnsureCreated();
 
+            // Загрузка таблицы сотрудников
             this.dbContext.Users.Load();
 
+            // Установка источника данных для таблицы сотрудников
             this.userBindingSource.DataSource = dbContext.Users.Local.ToBindingList();
         }
 
@@ -33,6 +37,9 @@ namespace nauka.test.impl
             dbContext = null;
         }
 
+        /// <summary>
+        /// Сохранение изменений в базе данных
+        /// </summary>
         private void btSave_Click(object sender, EventArgs e)
         {
             this.dbContext!.SaveChanges();
