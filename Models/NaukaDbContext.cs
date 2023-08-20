@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace nauka.test.impl.Models
 {
-    public class AppContext : DbContext
+    public class NaukaDbContext : DbContext
     {
         public string DbPath { get; }
         public DbSet<User> Users { get; set; }
 
-        public AppContext()
+        public NaukaDbContext()
         {
             var folder = Environment.SpecialFolder.LocalApplicationData;
             var path = Path.Join(Environment.GetFolderPath(folder), "NAUKA");

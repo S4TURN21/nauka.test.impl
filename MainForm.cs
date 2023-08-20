@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using nauka.test.impl.Models;
 using System.ComponentModel;
 
 namespace nauka.test.impl
 {
     public partial class MainForm : Form
     {
-        private Models.AppContext? dbContext;
+        private NaukaDbContext? dbContext;
 
         public MainForm()
         {
@@ -16,7 +17,7 @@ namespace nauka.test.impl
         {
             base.OnLoad(e);
 
-            this.dbContext = new Models.AppContext();
+            this.dbContext = new NaukaDbContext();
             this.dbContext.Database.EnsureCreated();
 
             this.dbContext.Users.Load();
